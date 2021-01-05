@@ -1,0 +1,10 @@
+.dropDown {
+    width: 140px;
+    position: absolute;
+    top: 40px;
+    border-radius: 3px;
+}
+
+.buttonColor {
+    background-color: #7d7d7d;
+}
