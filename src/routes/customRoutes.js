@@ -4,6 +4,8 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 
 import Login from "../containers/Login";
+import Feature from "../containers/features";
+import FeatureList from "../containers/featureList";
 
 
 
@@ -30,12 +32,12 @@ class CustomRoutes extends React.Component {
         <Route
           exact
           path="/features"
-          component={Login}
+          component={Feature}
         ></Route>
         <Route
           exact
-          path="/ft"
-          component={Login}
+          path="/featureList"
+          component={FeatureList}
         ></Route>
       
       </Switch>
