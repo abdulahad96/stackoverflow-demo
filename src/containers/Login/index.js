@@ -3,16 +3,14 @@ import { DotsLoader, Navbar } from "../../components";
 import { Images } from "../../theme/index";
 import Logo from '../../assets/images/logo.png'
 import "./styles.css";
-const Login = ({ }) => {
-
+const Login = (props) => {
     const [emailError, setEmailError] = useState(false)
-    const [passwordError, setPasswordError] = useState(true)
+    const [passwordError, setPasswordError] = useState(false)
     const [password, setPassword] = useState(null);
     const [email, setEmail] = useState(null);
     return (
         <>
             <div class="container">
-                <img id="logo" src={Logo} />
 
                 <form id="signup">
 
@@ -34,21 +32,23 @@ const Login = ({ }) => {
 
                         {passwordError && <p className='error'>Please Enter atleast 8 characters</p>}
 
-                        <button id="submit" onClick={() => {
+                        <button className="submit" onClick={() => {
                             const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-                            console.log(password,!password,password.length)
                             if (!email || !email.match(emailRegex)) {
                                 setEmailError(true)
                                 setTimeout(() => {
                                     setEmailError(false)
-                                }, 1500);
+                                }, 3500);
                             }
-                            else if (!password || !password.length  >= 8) {
+                            if (!password || !password.length  >= 8) {
                                 setPasswordError(true)
                                 setTimeout(() => {
                                     setPasswordError(false)
-                                }, 1500);
+                                }, 3500);
+                            }
+                            if((email && email.match(emailRegex)) && (password && password.length <= 8)){
+                                props.history.replace('/features')
                             }
                         }}>Login</button>
 

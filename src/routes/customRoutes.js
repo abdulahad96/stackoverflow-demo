@@ -36,7 +36,7 @@ class CustomRoutes extends React.Component {
         ></Route>
         <Route
           exact
-          path="/featureList"
+          path="/users/:user"
           component={FeatureList}
         ></Route>
       

@@ -124,7 +124,7 @@ input:-moz-placeholder {
   font-style: italic;
 }
 
-#signup .inputs #submit {
+#signup .inputs .submit {
   width: 100%;
   margin-top: 20px;
   padding: 15px 0;
@@ -163,7 +163,7 @@ input:-moz-placeholder {
   clear: both;
 }
 
-#signup .inputs #submit:hover {
+#signup .inputs .submit:hover {
   background: -moz-linear-gradient(
       top,
       #a4b0cb 0%,
